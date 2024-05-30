@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+:root {
+  --line--border-fill: #3498db;
+  --line--border-empty: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #d1cfcf;
+}
+
+.container {
+  text-align: center;
+}
+
+/* create the progress container and have the arragement correct */
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
+  position: relative;
+  /* position relative to be able to position other things around it. */
+
+}
+/*  */
+.progress-container::before {
+  content: '';
+  background-color: var(--line--border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+  /* Z index is for putting it behind the other elements */
+}
+
+
+
+
+.progress {
+  background-color: var(--line--border-fill);
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  transition: ease 400ms;
+  z-index: -1;
+}
+
+
+/* The circle is made to circle by the border radius 50% and setting a height and width */
+/* The arrangement is made with the flex properties */
+.circle {
+  background-color: #fff;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line--border-empty);
+  transition: ease 400ms;
+}
+
+/* whenever the circle gets an active tag it will change the border color to the preset color */
+.circle.active {
+  border-color: var(--line--border-fill);
+
+}
+
+
+.btn {
+  color: #fff;
+  background-color: var(--line--border-fill);
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 8px 30px;
+  margin: 5px;
+  font-family: inherit;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: var(--line--border-empty);
+  cursor: not-allowed;
+
+}
