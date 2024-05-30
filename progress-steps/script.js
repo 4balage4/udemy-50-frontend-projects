@@ -7,7 +7,6 @@ const circles = document.querySelectorAll('.circle');
 // this is gonna me an index, which one should be marked
 let currentActive = 1;
 
-
 const progressActive = 100 / (circles.length - 1)
 
 // progress should be updated by
