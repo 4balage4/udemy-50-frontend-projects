@@ -53,7 +53,7 @@ body {
 }
 
 .container.show-nav .circle {
-  transform: rotate(-70deg);
+  transform: rotate(-90deg);
 }
 
 button {
@@ -85,7 +85,7 @@ out it will be on the screen in good position
 }
 
 .circle button#close {
-  left: 60%;
+  left: 45%;
   transform: rotate(90deg);
   transform-origin: top left;
 }
